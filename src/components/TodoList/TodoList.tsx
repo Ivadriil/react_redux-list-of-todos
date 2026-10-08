@@ -27,13 +27,12 @@ export const TodoList: React.FC = () => {
     }
     return;
   });
-  const handClick = (todo: Todo) => {
+  const handleClick = (todo: Todo) => {
     dispatch(currentTodoSlice.actions.setPost(todo));
   };
-  console.log('filteredTodos:', filteredTodos);
   return (
     <>
-      {filteredTodos.length === 0 && filteredTodos === null && (
+      {filteredTodos.length === 0 && (
         <p className="notification is-warning">
           There are no todos matching current filter criteria
         </p>
@@ -81,7 +80,7 @@ export const TodoList: React.FC = () => {
                   data-cy="selectButton"
                   className="button"
                   type="button"
-                  onClick={() => handClick(todo)}
+                  onClick={() => handleClick(todo)}
                 >
                   <span className="icon">
                     <i
